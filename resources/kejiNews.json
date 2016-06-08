@@ -1,0 +1,77 @@
+{
+  "code": 200,
+  "msg": "success",
+  "newslist": [
+    {
+      "ctime": "2016-04-03 17:40",
+      "title": "谷歌新CEO皮查伊的制胜之道：心智成熟+为人低调",
+      "description": "腾讯科技",
+      "picUrl": "http:\/\/mat1.gtimg.com\/tech\/00Jamesdu\/2014\/index\/remark\/2.png",
+      "url": "http:\/\/tech.qq.com\/a\/20160403\/021904.htm"
+    },
+    {
+      "ctime": "2016-04-03 17:47",
+      "title": "36年前微软其实是一家硬件公司 靠苹果电脑赚钱",
+      "description": "腾讯科技",
+      "picUrl": "http:\/\/img1.gtimg.com\/tech\/pics\/hv1\/238\/222\/2046\/133097998.jpg",
+      "url": "http:\/\/tech.qq.com\/a\/20160403\/022125.htm"
+    },
+    {
+      "ctime": "2016-04-03 14:27",
+      "title": "中兴下周将撤换3名高管：CEO史立荣在内",
+      "description": "腾讯科技",
+      "picUrl": "http:\/\/img1.gtimg.com\/tech\/pics\/hv1\/191\/212\/2046\/133095401.jpg",
+      "url": "http:\/\/tech.qq.com\/a\/20160403\/017808.htm"
+    },
+    {
+      "ctime": "2016-04-03 13:14",
+      "title": "朝鲜正式宣布封杀Facebook、YouTube、Twitter和韩国网站",
+      "description": "腾讯科技",
+      "picUrl": "http:\/\/mat1.gtimg.com\/tech\/00Jamesdu\/2014\/index\/remark\/2.png",
+      "url": "http:\/\/tech.qq.com\/a\/20160403\/016094.htm"
+    },
+    {
+      "ctime": "2016-04-03 13:17",
+      "title": "这个怪招可让你的iPhone释放几个GB的空间",
+      "description": "腾讯科技",
+      "picUrl": "http:\/\/img1.gtimg.com\/tech\/pics\/hv1\/250\/208\/2046\/133094440.jpg",
+      "url": "http:\/\/tech.qq.com\/a\/20160403\/016162.htm"
+    },
+    {
+      "ctime": "2016-04-03 10:21",
+      "title": "特斯拉CEO马斯克：Model 3订单数已突破25万",
+      "description": "腾讯科技",
+      "picUrl": "http:\/\/img1.gtimg.com\/tech\/pics\/hv1\/148\/200\/2046\/133092298.jpg",
+      "url": "http:\/\/tech.qq.com\/a\/20160403\/012100.htm"
+    },
+    {
+      "ctime": "2016-04-03 07:56",
+      "title": "苹果堕落成“美国的三星” 只为赚钱而赚钱",
+      "description": "腾讯科技",
+      "picUrl": "http:\/\/mat1.gtimg.com\/tech\/00Jamesdu\/2014\/index\/remark\/2.png",
+      "url": "http:\/\/tech.qq.com\/a\/20160403\/007209.htm"
+    },
+    {
+      "ctime": "2016-04-03 07:58",
+      "title": "年轻人并未逃离Facebook 而是已经离不开",
+      "description": "腾讯科技",
+      "picUrl": "http:\/\/img1.gtimg.com\/tech\/pics\/hv1\/59\/188\/2046\/133089149.png",
+      "url": "http:\/\/tech.qq.com\/a\/20160403\/007244.htm"
+    },
+    {
+      "ctime": "2016-04-03 08:06",
+      "title": "实习生月薪8700美元？这些科技公司逆天了",
+      "description": "腾讯科技",
+      "picUrl": "http:\/\/mat1.gtimg.com\/tech\/00Jamesdu\/2014\/index\/remark\/2.png",
+      "url": "http:\/\/tech.qq.com\/a\/20160403\/007512.htm"
+    },
+    {
+      "ctime": "2016-04-03 08:08",
+      "title": "iPhone SE虽利润率稍低 但苹果精明着呢",
+      "description": "腾讯科技",
+      "picUrl": "http:\/\/img1.gtimg.com\/tech\/pics\/hv1\/143\/188\/2046\/133089233.png",
+      "url": "http:\/\/tech.qq.com\/a\/20160403\/007651.htm"
+    }
+  ]
+}
+

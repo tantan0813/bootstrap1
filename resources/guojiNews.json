@@ -1,0 +1,76 @@
+{
+  "code": 200,
+  "msg": "success",
+  "newslist": [
+    {
+      "ctime": "2016-04-03 16:41",
+      "title": "瓦努阿图群岛附近发生7.2级地震 震源深度10公里",
+      "description": "搜狐国际",
+      "picUrl": "http:\/\/photocdn.sohu.com\/20160403\/Img443226507_ss.jpg",
+      "url": "http:\/\/news.sohu.com\/20160403\/n443244481.shtml"
+    },
+    {
+      "ctime": "2016-04-03 17:13",
+      "title": "日本战舰停靠菲律宾 地点接近南海海域",
+      "description": "搜狐国际",
+      "picUrl": "http:\/\/photocdn.sohu.com\/20160403\/Img443230612_ss.jpg",
+      "url": "http:\/\/news.sohu.com\/20160403\/n443245227.shtml"
+    },
+    {
+      "ctime": "2016-04-03 17:17",
+      "title": "航站楼停电5小时 菲马尼拉机场大批航班延误",
+      "description": "搜狐国际",
+      "picUrl": "http:\/\/photocdn.sohu.com\/20160403\/Img443231304_ss.jpeg",
+      "url": "http:\/\/news.sohu.com\/20160403\/n443245531.shtml"
+    },
+    {
+      "ctime": "2016-04-03 17:46",
+      "title": "法国一工业区油槽车爆炸",
+      "description": "搜狐国际",
+      "picUrl": "http:\/\/photocdn.sohu.com\/20160403\/Img443240160_ss.jpg",
+      "url": "http:\/\/news.sohu.com\/20160403\/n443246394.shtml"
+    },
+    {
+      "ctime": "2016-04-03 17:51",
+      "title": "中国开闸放水19天后河水抵达越南西部",
+      "description": "搜狐国际",
+      "picUrl": "http:\/\/photocdn.sohu.com\/20160403\/Img443246586_ss.jpeg",
+      "url": "http:\/\/news.sohu.com\/20160403\/n443246585.shtml"
+    },
+    {
+      "ctime": "2016-04-03 14:06",
+      "title": "韩国总统朴槿惠率大规模经济使节团访问墨西哥",
+      "description": "搜狐国际",
+      "picUrl": "http:\/\/photocdn.sohu.com\/20160403\/Img443226507_ss.jpg",
+      "url": "http:\/\/news.sohu.com\/20160403\/n443240159.shtml"
+    },
+    {
+      "ctime": "2016-04-03 14:08",
+      "title": "里约奥运门票仅售5成 四大问题困扰筹备",
+      "description": "搜狐国际",
+      "picUrl": "http:\/\/photocdn.sohu.com\/20160403\/Img443230612_ss.jpg",
+      "url": "http:\/\/news.sohu.com\/20160403\/n443240163.shtml"
+    },
+    {
+      "ctime": "2016-04-03 15:08",
+      "title": "“债务问题秘密对话”泄露 希腊要求IMF做出解释",
+      "description": "搜狐国际",
+      "picUrl": "http:\/\/photocdn.sohu.com\/20160403\/Img443231304_ss.jpeg",
+      "url": "http:\/\/news.sohu.com\/20160403\/n443241675.shtml"
+    },
+    {
+      "ctime": "2016-04-03 15:45",
+      "title": "法国波尔多市附近一工业区内3日早晨发生爆炸",
+      "description": "搜狐国际",
+      "picUrl": "http:\/\/photocdn.sohu.com\/20160403\/Img443240160_ss.jpg",
+      "url": "http:\/\/news.sohu.com\/20160403\/n443242593.shtml"
+    },
+    {
+      "ctime": "2016-04-03 10:03",
+      "title": "G7外长将访问广岛核爆资料馆 日本外相谈核裁军",
+      "description": "搜狐国际",
+      "picUrl": "http:\/\/photocdn.sohu.com\/20160403\/Img443224805_ss.jpg",
+      "url": "http:\/\/news.sohu.com\/20160403\/n443229719.shtml"
+    }
+  ]
+}

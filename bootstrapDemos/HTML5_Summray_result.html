@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="../jquery/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        #navbar ul li{
+            cursor:pointer;
+        }
+
+        .box{
+            padding:0px 5px;
+            margin:10PX 10PX;
+            background-color:#EEEEEE;
+            width:100%;
+        }
+
+        .box a{
+            text-decoration:none;
+            font-size:16px;
+            color:black;
+        }
+        .img{
+            width:100%;
+            height:auto;
+        }
+        #l_loading{
+            width:160px;
+            margin:20px auto;
+        }
+        #l_p{
+            width:15px;
+            height:7px;
+            display:inline;
+            margin-top:6px;
+            position:absolute;
+            animation:frame1 1s ease 0s infinite;
+        }
+        .l_c{
+            float:left;
+            position:absolute;
+            width:7px;
+            height:7px;
+            border-radius:50%;
+        }
+        #l_c1{
+            background-color:red;
+            left:0px;
+            animation:frame2 1s ease 0s infinite;
+        }
+        #l_c2{
+            background-color:green;
+            right:0px;
+            animation:frame3 1s ease 0s infinite;
+        }
+        @keyframes frame1{
+            from{
+                transform:rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg);
+            }
+        }
+        @keyframes frame2{
+            50%{
+                background-color:green;
+            }
+        }
+        @keyframes frame3{
+            50%{
+                background-color:red;
+            }
+        }
+        #l_title{
+            margin-right:5px;
+            display:inline;
+        }
+    </style>
+    <style>
+        #login_head{
+            text-align:center;
+        }
+
+        .login_btn{
+            text-align:center;
+        }
+
+        .login_btn input{
+            padding-right:20px;
+            padding-left:20px;
+            margin:auto 30px;
+        }
+
+        #login_foot{
+            padding:5px;
+        }
+    </style>
+    <script>
+        var flag = 0;
+        $(function() {
+            getNews("original");
+            var len = $("#list li").length;
+            for(var i = 0; i < len; i++) {
+                $("#list li:eq(" + i + ")").click(function() {
+                    var value = $(this).attr("value");
+                    $("#list1").empty();
+                    $("#list2").empty();
+                    $("#list3").empty();
+                    getNews(value);
+                });
+            }
+        });
+        function getNews(type) {
+            $.ajax({
+                type:"GET",
+                url:"../resources/huanqiu.json",
+                dataType:"json",
+                beforeSend:function(){
+                    $("#l_loading").show();
+                },
+                data:"type=" + type,
+                success:function(data) {
+                    $("#l_loading").hide();
+                    if(data.error != 0) {
+                        setTimeout(function(){
+                            getNews(type);
+                        },500);
+                        alert("服务器错误！error"+data.error);
+                    } else {
+                        loaddata(data);
+                    }
+                },
+                error:function(){
+                    if(flag<3){
+                        flag++;
+                        getNews(type);
+                    }else{
+                        alert("网络不给力！");
+                    }
+                }
+            });
+        }
+        function loaddata(data) {
+            $.each(data.msg,function(index,item) {
+                var hl = "";
+                hl += "<div class=\"box\">" +
+                        "<h3><a target=\"_blank\" href=" + item.url + ">" + item.title + "</a></h3>" +
+                        "<div><img class=\"img\" src=" + item.img + "></div><div>" +
+                        "<h5>" + item.content + "</h5>" +
+                        "<p><small>" + item.date + "</small></p></div></div>";
+                $("#list"+((index%3)+1)).append(hl);
+            });
+        }
+        function format(str) {
+            //去除网址中的反斜杠
+            return str.replace(/\\/g,"");
+        }
+        //用户登录
+        function login() {
+            $("#myModal").modal("show");
+            $('#myModal').on('shown.bs.modal',function() {
+                $('#username').focus()
+            })
+        }
+        function regist() {
+            $("#myModal").modal("hide");
+            $("#regist_modal").modal("show");
+        }
+    </script>
+</head>
+<body>
+<nav id="nav" class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <a id="user_link" class="navbar-brand" href="javascript:login();" title="用户登录">
+                <span style="color:wheat" class="glyphicon glyphicon-user"></span>
+            </a>
+
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="HTML5_Summray_result.html" target="_blank">原创</a></li>
+                <li><a href="http://tech.huanqiu.com/science/" target="_blank">科技</a></li>
+                <li><a href="http://tech.huanqiu.com/internet/" target="_blank">互联网</a></li>
+                <li><a href="http://tu.duowan.com/tu">搞笑图</a></li>
+                <li><a href="http://tu.duowan.com/m/bxgif">动态图</a></li>
+                <li><a href="http://tu.duowan.com/tag/25047.html">笑话</a></li>
+            </ul>
+            <div class="nav navbar-nav navbar-right visible-lg visible-md hidden-sm hidden-xs">
+                <p id="date"></p>
+            </div>
+        </div>
+    </div>
+</nav>
+<div id="body" class="container-fluid">
+    <!--用户登录-->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modaltitle">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div id="login_head" class="modal-header">
+                    <h4 class="modal-title" id="modaltitle">用户登录</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </span>
+                                <input type="text" id="username" name="username" class="form-control input-sm"
+                                       placeholder="用户名" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </span>
+                                <input type="password" id="userpwd" name="userpwd" class="form-control input-sm"
+                                       placeholder="登录密码" required>
+                            </div>
+                        </div>
+                        <div class="form-group login_btn">
+                            <input type="submit" value="登录" class="btn btn-primary">
+                            <input type="button" onclick="regist();" value="注册" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+                <div id="login_foot" class="modal-footer">
+                    <a href="#" title="找回密码">找回密码</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--用户注册-->
+    <div id="regist_modal" class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id="regist_title" class="modal-header">
+                    <h4 style="text-align:center;">用户注册</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </span>
+                                <input id="regist_username" name="regist_username" type="text"
+                                       class="form-control input-sm" placeholder="用户名" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                                <input type="password" id="regist_pwd1" name="regist_pwd1"
+                                       class="form-control input-sm" placeholder="输入密码" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                                <input type="password" id="regist_pwd2" name="regist_pwd2"
+                                       class="form-control input-sm" placeholder="确认密码" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group login_btn">
+                            <input type="submit" value="注册" class="btn btn-primary">
+                            <input type="reset" value="重置" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="l_loading">
+        <p id="l_title">正在加载</p>
+        <div id="l_p">
+            <div id="l_c1" class="l_c"></div>
+            <div id="l_c2" class="l_c"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="newslist" class="row">
+            <div id="list1" class="col-md-4 col-sm-4"></div>
+            <div id="list2" class="col-md-4 col-sm-4"></div>
+            <div id="list3" class="col-md-4 col-sm-4"></div>
+        </div>
+    </div>
+    <div style="text-align:center">
+        <hr>
+        <p>本页面所有新闻资讯均来自<a href="http://tech.huanqiu.com">环球网</a>,版权均归其所有！</p>
+    </div>
+</div>
+</body>
+</html>
